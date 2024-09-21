@@ -1,0 +1,201 @@
+// My First Portfolio App
+
+
+import "package:flutter/material.dart";
+
+void main() {
+  runApp(MaterialApp(
+    home: First_Project(),
+    debugShowCheckedModeBanner: false,
+  ));
+}
+
+class First_Project extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("images/Wallpaper.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: const Padding(
+          padding: EdgeInsets.only(left: 30, top: 50),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  CircleAvatar(
+                    radius: 60,
+                    backgroundImage: AssetImage("images/arthur.jpeg"),
+                  ),
+                  Padding(padding: EdgeInsets.only(left: 20)),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Name",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontFamily: "Gotham Black"),
+                      ),
+                      Text(
+                        "Arthur Morgan",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: "Proxima",
+                          fontSize: 15,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 20),
+              ),
+              Column(
+                children: [
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.school,
+                        color: Colors.white,
+                        size: 35,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 15),
+                      ),
+                      Text(
+                        "Name School,City",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontFamily: "Proxima"),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 15),
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.work,
+                        color: Colors.white,
+                        size: 35,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 15),
+                      ),
+                      Text(
+                        "Any Projects",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontFamily: "Proxima"),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 15),
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.location_on,
+                        color: Colors.white,
+                        size: 35,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 15),
+                      ),
+                      Text(
+                        "My Location",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontFamily: "Proxima"),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 15),
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.mail,
+                        color: Colors.white,
+                        size: 35,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 15),
+                      ),
+                      Text(
+                        "bhattiafzal095@gmail.com",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontFamily: "Proxima"),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 15),
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.phone,
+                        color: Colors.white,
+                        size: 35,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 15),
+                      ),
+                      Text(
+                        "03302713945",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontFamily: "Proxima"),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Padding(
+                padding: EdgeInsets.all(10),
+              ),
+              Text(
+                style: TextStyle(color: Colors.white),
+                "Software engineering includes a variety of technique tools, and methodologies, including requirements analysis, design, testing, and maintenance.",
+                textAlign: TextAlign.start,
+              ),
+              Padding(
+                  padding: EdgeInsets.only(
+                bottom: 220,
+              )),
+              Text(
+                "Created By AFZAL",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontFamily: "Gotham Black",
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
