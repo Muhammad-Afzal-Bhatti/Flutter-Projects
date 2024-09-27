@@ -1,0 +1,117 @@
+// Sum OF Two Numbers Using TextField
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    home: Myworld(),
+    debugShowMaterialGrid: false,
+    debugShowCheckedModeBanner: false,
+  ));
+}
+
+class Myworld extends StatefulWidget {
+  const Myworld({super.key});
+
+  @override
+  State<Myworld> createState() => _MyworldState();
+}
+
+class _MyworldState extends State<Myworld> {
+  final firstsum = TextEditingController();
+  final Secondsum = TextEditingController();
+  int sum1 = 0;
+  int sum2 = 0;
+  int sum3 = 0;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "INPUT YOUR NUMBERS",
+          style: TextStyle(
+            color: Colors.red,
+            fontFamily: "Gotham",
+            fontSize: 20,
+          ),
+        ),
+        backgroundColor: Color(0xFF141526),
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+            gradient:
+                LinearGradient(colors: [Color(0xFF12222E), Color(0xFF1E1E2C)])),
+        child: Padding(
+          padding: EdgeInsets.all(10.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextField(
+                  style: TextStyle(
+                      color: const Color.fromARGB(255, 241, 243, 241),
+                      fontSize: 15),
+                  keyboardType: TextInputType.number,
+                  controller: firstsum,
+                  enabled: true,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: "Enter First Number",
+                    hintStyle: TextStyle(
+                        color: const Color.fromARGB(255, 144, 138, 138)),
+                  )),
+              SizedBox(
+                height: 10.0,
+              ),
+              Column(
+                children: [
+                  TextField(
+                      style: TextStyle(
+                          color: const Color.fromARGB(255, 241, 243, 241),
+                          fontSize: 15),
+                      keyboardType: TextInputType.number,
+                      controller: Secondsum,
+                      enabled: true,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: "Enter Second Number",
+                        hintStyle: TextStyle(
+                            color: const Color.fromARGB(255, 144, 138, 138)),
+                      )),
+                ],
+              ),
+              SizedBox(height: 20),
+              Container(
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: WidgetStatePropertyAll<Color>(
+                      Colors.blue,
+                    ),
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      sum1 = int.parse(firstsum.text);
+                      sum2 = int.parse(Secondsum.text);
+                      sum3 = sum1 + sum2;
+                    });
+                  },
+                  child: Text(
+                    "Submit",
+                    style: TextStyle(color: Colors.white),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                "Sum of These Numbers Are $sum3",
+                style: TextStyle(color: Colors.white),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
